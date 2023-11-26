@@ -8,6 +8,8 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Testobj;
     bool a = true;
+    public Text x;
+   public int c=0;
 
     public void Deactive()
     {
@@ -21,6 +23,11 @@ public class NewBehaviourScript : MonoBehaviour
             Testobj.SetActive(true);
             a = true;
         }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        c--;
+        x.text = c.ToString();
     }
 }
 
